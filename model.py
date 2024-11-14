@@ -9,8 +9,8 @@ from sklearn.model_selection import cross_val_score, train_test_split
 # format files
 train_dataset = pd.read_csv('data/train.csv')
 test_dataset = pd.read_csv('data/test.csv')
-format_dataset(train_dataset, 'formatted_data/formatted_train.csv')
-format_dataset(test_dataset, 'formatted_data/formatted_test.csv')
+format_dataset(train_dataset, 'train.csv')
+format_dataset(test_dataset, 'test.csv')
 
 # one-hot encoding
 combined_data = pd.concat([train_dataset, test_dataset], keys=['train', 'test'])
