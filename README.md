@@ -1,4 +1,4 @@
-# ML Apartment Price Prediction
+# Apartment Price Prediction
 
 Model for sale price predicting.
 
