@@ -16,16 +16,18 @@ Model for sale price predicting.
 
 Data description: ```data_description.txt```.
 
-Test and train data: ```test.csv```, ```train.csv```.
+Train data: ```data/train.csv```.
 
-Test results: ```sample_submission.csv```.
+Test data: ```data/test.csv```.
 
-Test data & results: ```test_with_results.csv```.
+Test example: ```data/sample_submission.csv```.
+
+Test results: ```result/result.csv```.
 
 ### Formatted data
 
-Formatted test data & results and train data: 
-```formatted_test_with_results.csv```, ```formatted_train.csv```
+Formatted train and test datasets are in directory 
+```formatted_data```
 
 ### Result
 
@@ -35,26 +37,22 @@ Predicted result sale price: ```result.csv```
 
 ### main.py
 
-- formatting data for using model;
+- preprocessing data with one-hot encoding;
 - choosing the best model (```CatBoostRegressor```) by comparing them;
 - predicting data and comparing them;
+- showing graph for comparing.
 - creating result file;
-- showing graph for comparing test and predicted data.
 
 ### constants.py
 
 Constants for keys & maps for data formatting. 
 It's description can be found in ```data_description.txt```.
 
-### data_formatting.py
+### dataset_preprocessing.py
 
-```def format_data_types(df)```
-- filling empty fields;
-- replacing not number values using maps.
-
-```def format_file(filename)```
-- formatting data types;
-- deleting columns in depend on correlation coefficients.
+```def format_dataset(df, filename)```
+- processing na fields;
+- deleting correlated fields
 
 ```def create_formatted_file(df, filename)```
 - create formatted file in **formatted_data** directory.
@@ -62,7 +60,7 @@ It's description can be found in ```data_description.txt```.
 ```def create_result_file(df)```
 - create file with results in **result** directory.
 
-### corr_operations.py
+### correlation_processing.py
 
 ```def check_corr_emptiness(corr_coefficients)```
 - check correlation coefficients for emptiness and in case of emptiness add if for deleting.
